@@ -1,0 +1,8 @@
+<config>
+    <modules>
+        <MasteringMagento_Example>
+            <active>true</active>
+            <codePool>local</codePool>
+        </MasteringMagento_Example>
+    </modules>
+</config>
