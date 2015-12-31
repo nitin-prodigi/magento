@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<!DOCTYPE config>
+
+<config>
+	<menu>
+		<example translate="title" module="example">
+			<title>Example</title>
+			<sort_order>1000</sort_order>
+			<action>adminhtml/example</action>
+		</example>
+	</menu>
+</config>
