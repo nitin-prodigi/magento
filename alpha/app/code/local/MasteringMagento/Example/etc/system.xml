@@ -1,0 +1,24 @@
+<config>
+	<sections>
+		<general translate="label">
+			<groups>
+				<master_example translate="label">
+					<label>Example Options</label>
+					<sort_order>0</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<some_field translate="label">
+							<label>Some Field</label>
+							<frontend_type>text</frontend_type>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</some_field>
+					</fields>
+				</master_example>
+			</groups>
+		</general>
+	</sections>
+</config>

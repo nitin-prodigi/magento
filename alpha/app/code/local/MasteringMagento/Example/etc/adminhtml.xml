@@ -1,9 +1,9 @@
 <config>
 	<menu>
-		<example translate="title">
-			<title>Example</title>
+		<master_example translate="title" module="master_example">
+			<title>Event</title>
 			<sort_order>1000</sort_order>
-			<action>adminhtml/example</action>
-		</example>
+			<action>adminhtml/event</action>
+		</master_example>
 	</menu>
 </config>

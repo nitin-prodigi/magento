@@ -1,24 +1,54 @@
 <config>
 	<modules>
 		<MasteringMagento_Example>
-			<version>0.0.0</version>
+			<version>0.1.0</version>
 		</MasteringMagento_Example>
 	</modules>
 	<global>
 		<models>
-			<example>
+			<master_example>
 				<class>MasteringMagento_Example_Model</class>
-			</example>
+				<resourceModel>master_example_mysql4</resourceModel>
+			</master_example>
+			<master_example_mysql4>
+				<class>MasteringMagento_Example_Model_Mysql4</class>
+				<entities>
+					<event>
+						<table>example_event</table>
+					</event>
+				</entities>
+			</master_example_mysql4>
 		</models>
+		<resources>
+			<master_example_setup>
+				<setup>
+					<module>MasteringMagento_Example</module>
+					<class>MasteringMagento_Example_Model_Resource_Setup</class>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</master_example_setup>
+			<master_example_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</master_example_write>
+			<master_example_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</master_example_read>
+		</resources>
 		<blocks>
-			<example>
+			<master_example>
 				<class>MasteringMagento_Example_Block</class>
-			</example>
+			</master_example>
 		</blocks>
 		<helpers>
-			<example>
+			<master_example>
 				<class>MasteringMagento_Example_Helper</class>
-			</example>
+			</master_example>
 		</helpers>
 	</global>
 
@@ -27,7 +57,7 @@
 			<adminhtml>
 				<args>
 					<modules>
-						<example before="Mage_Adminhtml">MasteringMagento_Example_Adminhtml</example>
+						<master_example before="Mage_Adminhtml">MasteringMagento_Example_Adminhtml</master_example>
 					</modules>
 				</args>
 			</adminhtml>
@@ -36,19 +66,19 @@
 
 	<frontend>
 		<routers>
-			<example>
+			<master_example>
 				<use>standard</use>
 				<args>
 					<frontName>example</frontName>
 					<module>MasteringMagento_Example</module>
 				</args>
-			</example>
+			</master_example>
 		</routers>
 		<layout>
 			<updates>
-				<example>
+				<master_example>
 					<file>example.xml</file>
-				</example>
+				</master_example>
 			</updates>
 		</layout>
 	</frontend>
