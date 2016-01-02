@@ -5,6 +5,22 @@ based on parameters given by MasteringMagento_Example_Block_Adminhtml_Event_Edit
 */
 class MasteringMagento_Example_Block_Adminhtml_Event_Edit_Form extends Mage_Adminhtml_Block_Widget_Form
 {
+	protected function _initFormValues()
+    {
+    	// existing event
+    	if($event = Mage::registry('current_event')){
+    		$data = $event->getData();
+    		$this->getForm()->setValues($data);
+    	}
+
+    	// persisting post data
+    	if($data = Mage::getSingleton('adminhtml/session')->getData('event_form_data', true)){		// true clears the value from session
+    		$this->getForm()->setValues($data);
+    	}
+
+        return $this;
+    }
+
 	public function _prepareForm()
 	{
 		$form = new Varien_Data_Form(
