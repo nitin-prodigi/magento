@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+
+<layout>
+	<!-- Mage_Adminhtml_Catalog_ProductController@editAction will append product type -->
+    <adminhtml_catalog_product_event>
+    	<reference name="product_tabs">
+    		<action method="addTab">
+    			<name>event_info</name>
+    			<block>master_example/adminhtml_catalog_product_edit_tab_event</block>
+    		</action>
+    	</reference>
+    </adminhtml_catalog_product_event>
+</layout>

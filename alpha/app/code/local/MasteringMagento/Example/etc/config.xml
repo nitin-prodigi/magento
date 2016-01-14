@@ -1,7 +1,7 @@
 <config>
 	<modules>
 		<MasteringMagento_Example>
-			<version>0.1.0</version>
+			<version>0.1.2</version>
 		</MasteringMagento_Example>
 	</modules>
 	<global>
@@ -16,6 +16,9 @@
 					<event>
 						<table>example_event</table>
 					</event>
+					<event_ticket>
+						<table>example_event_ticket</table>
+					</event_ticket>
 				</entities>
 			</master_example_mysql4>
 		</models>
@@ -50,8 +53,45 @@
 				<class>MasteringMagento_Example_Helper</class>
 			</master_example>
 		</helpers>
-	</global>
 
+		<!-- adds event product type, taken from downloadable -->
+        <catalog>
+            <product>
+                <type>
+                    <event translate="label" module="master_example">
+                        <label>Event Registration</label>
+                        <model>master_example/product_type_event</model>
+                        <composite>0</composite>
+                    </event>
+                    <bundle>
+                        <allowed_selection_types>
+                            <event/>
+                        </allowed_selection_types>
+                    </bundle>
+                    <configurable>
+                        <allow_product_types>
+                            <event/>
+                        </allow_product_types>
+                    </configurable>
+                    <grouped>
+                        <allow_product_types>
+                            <event/>
+                        </allow_product_types>
+                    </grouped>
+                </type>
+            </product>
+        </catalog>
+	</global>
+	<!-- process a layout file for module -->
+	<adminhtml>
+		<layout>
+			<updates>
+				<master_example>
+					<file>example.xml</file>
+				</master_example>
+			</updates>
+		</layout>
+	</adminhtml>
 	<admin>
 		<routers>
 			<adminhtml>
